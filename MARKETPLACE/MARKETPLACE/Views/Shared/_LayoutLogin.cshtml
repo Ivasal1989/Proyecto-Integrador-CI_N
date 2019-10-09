@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+    @Styles.Render("~/Content/CSS003")
+</head>
+<body>
+    <header class="header">
+        <ul class="listaMenu">
+            <li>
+                <a class="dashboard" href=""><span class="icon-circle-left">@Html.ActionLink("Ir a inicio", "Index", "Home")</span></a>
+            </li>
+            <li>
+                <a href=""><span class="icon-display">@Html.ActionLink("Registrarse", "Registrar_usuario", "Acceso")</span></a>
+            </li>
+            <li>
+                <a href=""><span class="icon-user">@Html.ActionLink("Afiliado", "Registrar_afiliado", "Afiliado")</span></a>
+            </li>
+        </ul>
+    </header>
+
+    @RenderBody()
+    <footer class="footer">
+        <a>equipo los tigres.com</a>
+
+    </footer>
+
+</body>
+</html>

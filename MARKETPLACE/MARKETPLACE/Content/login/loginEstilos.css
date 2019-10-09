@@ -1,0 +1,110 @@
+﻿@font-face {
+    font-family: Poppins-Regular;
+    src:url(../../fonts/Poppins/Poppins-Regular.woff);
+}
+.navbar{
+    font-family: Poppins-Regular;    
+}
+body{
+    padding:0px;
+    margin:0px;
+}
+.contenedor {
+    width: 100%;
+    max-width: 100%;
+    height: 672px;
+    background-color: #242939;
+    z-index:1;
+    position:absolute;
+}
+.login {
+    margin: auto;
+    
+    width: 550px;
+    height: 250px;
+    margin-top: 150px;
+    z-index: 2;
+}
+.titulo {
+    width: 100%;
+    display: block;
+    font-family: Poppins-Regular;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom:20px;
+    color:white;
+}
+.texto.r1{
+    
+}
+.texto.r2 {
+    
+}
+.t1 {
+    float: left;
+    width: 260px;
+    height: 60px;
+    border: 0px;
+    border-radius: 12px 0 0 0;
+    border: 1px solid grey;
+    border-right: none;
+    font-family: Poppins-Regular;
+    padding-left:12px;
+}
+.t2 {
+    float: left;
+    width: 261px;
+    height: 60px;
+    border-radius: 0 12px 0 0;
+    border-right: none;
+    border: 1px solid grey;
+    font-family: Poppins-Regular;
+    padding-left: 12px;
+}
+.campos {
+    margin: auto;
+}
+.btnini {
+    border: 0px;
+    padding: 20px 256px 20px 256px;
+    background: black;
+    color: white;
+    font-family: Poppins-Regular;
+}
+.facebook {
+    border: 1px solid black;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: white;
+    font-family: Poppins-Regular;
+    font-size: 10px;
+    background: grey;
+    width: 100%;
+}
+.google {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border: 1px solid black;
+    width: 100%;
+    color: white;
+    font-family: Poppins-Regular;
+    font-size: 10px;
+    background: grey;
+}
+
+
+
+
+
+.reset {
+    width: 100%;
+    display: block;
+    font-family: Poppins-Regular;
+    font-size: 10px;
+    font-family: Poppins-Regular;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    color: white;
+}

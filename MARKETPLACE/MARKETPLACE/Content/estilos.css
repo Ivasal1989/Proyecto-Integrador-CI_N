@@ -1,0 +1,121 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(../fonts/Poppins/Poppins-Regular.woff);
+}
+@font-face {
+    font-family: Poppins-Light;
+    src: url(../fonts/Poppins/Poppins-Light.woff);
+}
+*{
+    box-sizing: border-box;
+  }
+.header{
+    color: white;
+    background-color: #1E1E29;
+}
+.listaMenu {
+    font-family: Poppins-Light;
+    font-weight:bold;
+    font-size:13px;
+    text-align: end;
+}
+.listaMenu li {
+    display:inline;
+    padding-left:3px;
+    padding-right:3px;
+    
+}
+.listaMenu li a{
+    color: white;
+}
+a:link{
+    text-decoration: none;
+}
+.dashboard{
+    padding: 4px;
+    padding-bottom: -15px;
+}
+/*============================================================================*/
+.aside{
+    font-family: Poppins-Regular;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px 0 30px 0;
+    margin: auto;
+}
+h3{
+    margin-bottom: 55px;
+}
+.btnLogin, .t1{
+    font-family: Poppins-Regular;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+ }
+ .btnFacebook{
+    font-family: Poppins-Regular;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+    color: #2083d5;
+    margin: 2px 0;
+ }
+ .btnGoogle{
+    font-family: Poppins-Regular;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+    color: red;
+ }
+         /* style the submit button */
+         .btnLogin[type=submit] {
+            background-color: #2083F7;
+            color: white;
+            cursor: pointer;
+          }          
+          .btnLogin[type=submit]:hover {
+            background-color: #2083d5;
+          }
+          .t1:hover {
+            box-shadow: 0 0 5px rgba(062,095,138);
+          }
+          .btnFacebook[type=submit]:hover {
+            box-shadow:0 0 5px rgba(062,095,138);
+          }
+          .btnGoogle[type=submit]:hover {
+            box-shadow:0 0 5px rgba(197,029,052);
+          }
+
+.btnLogin{
+    margin-top: 30px;
+}
+/*============================================================================*/
+
+
+.footer{
+    color: white;
+    background-color: #1E1E29;
+    font-size: 12px;
+    text-align: end;
+}
