@@ -1,14 +1,12 @@
-﻿
+﻿@font-face {
+    font-family: Poppins-Regular;
+    src: url(fuentes/Poppins/Poppins-Regular.woff);
+}
 
-/*!
-	Zocial Butons
-	http://zocial.smcllns.com
-	by Sam Collins (@smcllns)
-	License: http://opensource.org/licenses/mit-license.php
-	
-	You are free to use and modify, as long as you keep this license comment intact or link back to zocial.smcllns.com on your site.
-*/
-
+@font-face {
+    font-family: Poppins-Light;
+    src: url(fuentes/Poppins/Poppins-Light.woff);
+}
 
 
 /*
@@ -89,23 +87,8 @@ a.zocial {
 
 /* Gradients */
 
-.zocial {
-    background-image: -moz-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
-    background-image: -ms-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
-    background-image: -o-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.1)), color-stop(49%, rgba(255,255,255,.05)), color-stop(51%, rgba(0,0,0,.05)), to(rgba(0,0,0,.1)));
-    background-image: -webkit-linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
-    background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.05) 49%, rgba(0,0,0,.05) 51%, rgba(0,0,0,.1));
-}
 
-    .zocial:hover, .zocial:focus {
-        background-image: -moz-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
-        background-image: -ms-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
-        background-image: -o-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
-        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.15)), color-stop(49%, rgba(255,255,255,.15)), color-stop(51%, rgba(0,0,0,.1)), to(rgba(0,0,0,.15)));
-        background-image: -webkit-linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
-        background-image: linear-gradient(rgba(255,255,255,.15) 49%, rgba(0,0,0,.1) 51%, rgba(0,0,0,.15));
-    }
+
 
     .zocial:active {
         background-image: -moz-linear-gradient(bottom, rgba(255,255,255,.1), rgba(255,255,255,0) 30%, transparent 50%, rgba(0,0,0,.1));
@@ -356,6 +339,7 @@ a.zocial {
     }
 
     .zocial.facebook:before {
+        font-family: Poppins-Light;
         content: "f";
     }
 
@@ -391,6 +375,7 @@ a.zocial {
     }
 
     .zocial.google:before {
+        font-family: Poppins-Light;
         content: "G";
     }
 
@@ -780,13 +765,15 @@ a.zocial {
     }
 
     .zocial.facebook {
-        border-radius: 6px;
+        font-family: Poppins-Light;
+        font-size: 12px;
+        border-radius: 30px;
         float: none;
         margin: auto;
         display: block;
-        padding: 10px 170px 10px 90px;
-        background-color: white;
-        color: blue;
+        padding: 7px 150px 7px 140px;
+        background-color: #3B5998;
+        color: white;
     }
     .zocial.fivehundredpx {
         background-color: #333;
@@ -813,12 +800,15 @@ a.zocial {
     }
 
     .zocial.google {
-        border-radius: 6px;
+        font-size: 12px;
+        font-family: Poppins-Light;
+        border-radius: 30px;
         margin: auto;
-        margin-bottom:5px;
+        margin-bottom: 5px;
         display: block;
-        padding: 10px 180px 10px 105px;
-        background-color: red;
+        padding: 7px 155px 7px 150px;
+        background-color: #FF2301;
+        color:white;
     }
 
     .zocial.googleplay {
