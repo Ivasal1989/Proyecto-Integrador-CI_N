@@ -1,0 +1,37 @@
+﻿@model MARKETPLACE.Entity.Uxsers
+
+@{
+    ViewBag.Title = "Registrar_users";
+}
+<head>
+    @Styles.Render("~/Content/CSS004")
+</head>
+<aside class="aside">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <h2>Registrar</h2>
+            <div class="col">
+
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "Nombre usuario" } })
+
+                @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "Apellido usuario" } })
+
+                @Html.DropDownList("idpais", (SelectList)ViewBag.pais, new { @class = "t1", placeholder = "Pais" })
+
+                @Html.EditorFor(model => model.usuario, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "Usuario" } })
+
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "t1", placeholder = "Email" } })
+
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "t1", placeholder = "Contraseña", type = "password" } })
+
+                <input type="submit" value="Create" class="btnRegistrar" />
+
+            </div>
+        </div>
+    }
+</aside>
+    @*<div>
+        @Html.ActionLink("Re", "Index")
+    </div>*@

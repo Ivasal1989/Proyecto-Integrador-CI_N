@@ -120,15 +120,18 @@ create table Users(
 id varchar(20)not null primary key default 'USER'+right('00'+cast(next value for codUSER as varchar),3),
 nombre varchar(45) not null,
 apellido varchar(50) not null,
+idpais int not null,
 usuario varchar(25) not null,
 email varchar(60) not null,
-password varchar(30) not null
+password varchar(30) not null,
+FOREIGN KEY (idpais) REFERENCES pais(idpais),
 )
-go
+GO
+SELECT * FROM dbo.Users
 --==========================================================
 --------------INSERT USER------------------
-insert into Users (nombre,apellido,usuario,email,password)
-values('rodrigo','salazar','rodri','rodrigo@hotmail.com','123456789');
+insert into Users (nombre,apellido,idpais,usuario,email,password)
+values('rodrigo','salazar',1,'rodri','rodrigo@hotmail.com','123456789');
 --==========================================================
 --------------TABLA USUARIO------------------
 If Object_id ('usuario') is not null
@@ -374,20 +377,20 @@ end
 GO
 --==========================================================
 --------------PROC USP_Registro_usuario------------------
-create Procedure USP_Registro_usuario
+create Procedure USP_Registro_users
 (
  --@cod int,
  @nom varchar(50),
+ @apellido varchar(50),
  @idpais int,
- @idsexo int,
+ @usu varchar(50),
  @email varchar(100),
- @contra varchar(20),
- @confcontra varchar(20)
+ @contra varchar(20)
 )
 as
 begin
- insert into usuario( nombres, idpais, idsexo, email, contraseña, confir_contraseña ) 
- values (@nom, @idpais, @idsexo, @email, @contra, @confcontra)
+ insert into Users( nombre, apellido, idpais, usuario, email, password) 
+ values (@nom,@apellido, @idpais, @usu, @email, @contra)
 end
 GO
 --==========================================================
