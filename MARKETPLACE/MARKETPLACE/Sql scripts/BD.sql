@@ -127,7 +127,6 @@ password varchar(30) not null,
 FOREIGN KEY (idpais) REFERENCES pais(idpais),
 )
 GO
-SELECT * FROM dbo.Users
 --==========================================================
 --------------INSERT USER------------------
 insert into Users (nombre,apellido,idpais,usuario,email,password)
