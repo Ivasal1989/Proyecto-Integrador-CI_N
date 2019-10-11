@@ -198,7 +198,6 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\SessionData.cs" />
-    <Compile Include="Models\SignUp.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UsersDAO.cs" />
     <Compile Include="Models\UsersDL.cs" />
