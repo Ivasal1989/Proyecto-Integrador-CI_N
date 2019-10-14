@@ -1,8 +1,166 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>@ViewBag.Title - Mi aplicación ASP.NET</title>*@
 
-<h2>Bienvenido</h2>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+    @*@Styles.Render("~/Content/css")*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/MiPaginaPrincipal.css" rel="stylesheet" />
+
+    @Styles.Render("~/Content/css000")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="logo">
+                    <h1><a href="#">Online <span>Market Place</span></a></h1>
+                    <p>Mi Tienda</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="account">
+                    <ul>
+                        <li>
+                            <div class="hidden-xs">
+                                <h4><a>Llamar</a></h4>
+                                <p>966308023</p>
+
+                            </div>
+
+                            <div class="visible-xs">
+
+                                <p>966308023</p>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="nav-menus">
+
+                        <ul class="nav nav-pills">
+                            <li class="active"><a style="border-radius:initial;" href="#">Inicio</a></li>
+                            <li><a style="border-radius:initial;" href="#">Ubicanos</a></li>
+                            <li><a style="border-radius:initial;" href="#">Nosotros</a></li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        
+
+ 
+        @*@RenderBody()*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>
+
+
+<div id="themeSlider" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#themeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#themeSlider" data-slide-to="1"></li>
+        <li data-target="#themeSlider" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgOverlay"></div>
+            <img style="height: 320px; width:100%" src="../Imagenes/celulares.jpg" alt="First slide">
+            <div class="carousel-caption">
+                <h3>Celulares</h3>
+                
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height: 320px; width:100%" src="../Imagenes/celulares2.jpg" alt="Second slide">
+            <div class="carousel-caption">
+                <h3>Celulares</h3>
+                
+            </div>
+        </div>
+        <div class="item">
+            <div class="imgOverlay"></div>
+            <img style="height: 320px; width:100%" src="../Imagenes/compu.jpg" alt="Third slide">
+            <div class="carousel-caption">
+                <h3>Computo</h3>
+               
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#themeSlider" data-slide="prev">
+        <span class="fa fa-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#themeSlider" data-slide="next">
+        <span class="fa fa-chevron-right"></span>
+    </a>
+    
+</div>
+
+
+<div class="olContent f1"><h2 style="color:black">Buscar Producto/Categoria</h2></div>
+<div class="olSearch fr">
+    <input type="text" placeholder="Ingrese Texto" name="searchkey" class="inputComn houseText form-control"/>
+    <div class="searchIcon">
+        <button type="button" class="searchBtn">
+            <img src="~/Imagenes/buscar.png" />
+        </button>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-header">
+            <h2>Nuestros Productos <small>trends products</small></h2>
+        </div>
+    </div>
+</div>
+
+<div class="row product-container">
+
+    <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
+        <div class="thumbnail product-item" style="height:300px">
+            <img class="img-responsive" title="Click para ver el detalle del producto"
+                 style="cursor:pointer; height:160px; width:100%"
+             src="~/Imagenes/1.jpg" />
+
+            <div class="caption">
+                <h5>Nombre del Producto</h5>
+                <p>S/. 1500.00</p>
+                <p>Disponible</p>
+                <div class="product-item-badge">Nuevo</div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
 

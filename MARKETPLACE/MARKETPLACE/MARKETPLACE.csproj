@@ -214,6 +214,7 @@
     <Content Include="Content\estilos.css" />
     <Content Include="Content\gridPosition.css" />
     <Content Include="Content\login\loginEstilos.css" />
+    <Content Include="Content\MiPaginaPrincipal.css" />
     <Content Include="Content\registrar.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\Zocial.css" />
@@ -232,6 +233,14 @@
     <Content Include="fonts\icomoon.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imagenes\1.jpg" />
+    <Content Include="Imagenes\2.jpg" />
+    <Content Include="Imagenes\buscar.png" />
+    <Content Include="Imagenes\celulares.jpg" />
+    <Content Include="Imagenes\celulares2.jpg" />
+    <Content Include="Imagenes\compu.jpg" />
+    <Content Include="Imagenes\searchIcon.png" />
+    <Content Include="Imagenes\searchIcon2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Datos\UserData.edmx">
