@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 using MARKETPLACE.Models;
 using MARKETPLACE.Entity;
-using MARKETPLACE.SQLServer;
 
 namespace MARKETPLACE.Controllers
 {
@@ -38,7 +37,7 @@ namespace MARKETPLACE.Controllers
             return RedirectToAction("Index", "Account");
         }
 
-                public ActionResult UserS()
+        public ActionResult UserS()
 		{
 			ViewBag.User = session.getSession("usuario");
 			if (ViewBag.User == "")
