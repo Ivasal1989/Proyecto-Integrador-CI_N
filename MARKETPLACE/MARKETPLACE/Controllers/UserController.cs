@@ -46,7 +46,8 @@ namespace MARKETPLACE.Controllers
 			}
 			else
 			{
-				return View();
+				UserDatos obj = new UserDatos();
+				return View(obj.userDatos());
 			}
 		}
         public ActionResult Close()

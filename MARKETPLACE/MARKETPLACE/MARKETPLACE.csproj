@@ -191,6 +191,7 @@
       <DependentUpon>UserData.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\Pais.cs" />
+    <Compile Include="Entity\UserDatos.cs" />
     <Compile Include="Entity\Uxsers.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -243,13 +244,6 @@
     <Content Include="Imagenes\searchIcon2.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Datos\UserData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Datos\UserData.edmx.diagram">
-      <DependentUpon>UserData.edmx</DependentUpon>
-    </Content>
     <Content Include="fonts\icomoon.eot" />
     <Content Include="fonts\icomoon.ttf" />
     <Content Include="fonts\icomoon.woff" />
@@ -259,6 +253,13 @@
     <Content Include="fonts\Poppins\Poppins-Regular.otf" />
     <Content Include="fonts\Poppins\Poppins-Regular.ttf" />
     <Content Include="fonts\Poppins\Poppins-Regular.woff" />
+    <EntityDeploy Include="Datos\UserData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Datos\UserData.edmx.diagram">
+      <DependentUpon>UserData.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -293,11 +294,11 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Usuarios.cshtml" />
-    <Content Include="Views\User\UserS.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Listado_usuario.cshtml" />
     <Content Include="Views\User\Registrar_users.cshtml" />
+    <Content Include="Views\User\UserS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

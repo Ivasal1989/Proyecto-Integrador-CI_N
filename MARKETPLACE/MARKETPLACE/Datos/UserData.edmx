@@ -12,6 +12,7 @@
           <Property Name="id" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idpais" Type="int" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="email" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
@@ -31,6 +32,7 @@
           <Property Name="id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idpais" Type="Int32" Nullable="false" />
           <Property Name="usuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
@@ -50,6 +52,7 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="idpais" ColumnName="idpais" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="password" ColumnName="password" />

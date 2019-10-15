@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="04a54548e15f4bdc92062799b967ec60" Name="Diagram1">
+      <Diagram DiagramId="c068be8ac5c64f03b46f380580141872" Name="Diagram1">
         <EntityTypeShape EntityType="RocketMarketsModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
