@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VentasController.cs" />
     <Compile Include="Datos\UserData.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -212,8 +213,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Bootstrap3.0\bootstrap.min.css" />
+    <Content Include="Content\cliente-producto.css" />
     <Content Include="Content\estilos.css" />
     <Content Include="Content\gridPosition.css" />
+    <Content Include="Content\header.css" />
     <Content Include="Content\login\loginEstilos.css" />
     <Content Include="Content\MiPaginaPrincipal.css" />
     <Content Include="Content\registrar.css" />
@@ -299,6 +303,8 @@
     <Content Include="Views\User\Listado_usuario.cshtml" />
     <Content Include="Views\User\Registrar_users.cshtml" />
     <Content Include="Views\User\UserS.cshtml" />
+    <Content Include="Views\Ventas\Detalle_Producto.cshtml" />
+    <Content Include="Views\Shared\_LayoutProducto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
