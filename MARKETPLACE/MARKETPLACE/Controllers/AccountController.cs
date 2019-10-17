@@ -45,6 +45,7 @@ namespace MARKETPLACE.Controllers
 					session.setSession("usuario", datos.usuario);
 					ViewBag.User = session.getSession("usuario");
 					return RedirectToAction("UserS", "User");
+					//return RedirectToAction("Index", "Home");
 				}
 				else
 				{

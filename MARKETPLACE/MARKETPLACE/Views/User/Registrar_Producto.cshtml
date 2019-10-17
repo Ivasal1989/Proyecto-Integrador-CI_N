@@ -1,0 +1,40 @@
+﻿@model MARKETPLACE.Entity.Producto
+
+@{
+    ViewBag.Title = "Create";
+}
+<head>
+    @Styles.Render("~/Content/CSS004")
+</head>
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <h2>Registrar</h2>
+        <div class="col">
+
+            @Html.DropDownList("idmarca", (SelectList)ViewBag.idmarca, new { @class = "t1", placeholder = "Marca" })
+
+            @Html.DropDownList("idcategoria", (SelectList)ViewBag.idcategoria, new { @class = "t1", placeholder = "Categoria" })
+
+            @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "nombre" } })
+
+            <div>
+
+                <p class="t1">Seleccione imagen</p> <input required type="file" name="imageload" /><br />
+            </div>
+            @Html.EditorFor(model => model.preciof_producto, new { htmlAttributes = new { @class = "t1", placeholder = "Precio" } })
+
+            @Html.EditorFor(model => model.desc_producto, new { htmlAttributes = new { @class = "t1", placeholder = "descripcion", type = "text" } })
+
+            <input type="submit" value="Create" class="btnRegistrar" />
+
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

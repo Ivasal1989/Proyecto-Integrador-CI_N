@@ -36,6 +36,8 @@ namespace MARKETPLACE
 
 			bundles.Add(new StyleBundle("~/Content/CSS005").Include(
 					  "~/Content/afiliado.css"));
+            bundles.Add(new StyleBundle("~/Content/CSS006").Include(
+                       "~/Content/header.css"));
 
 
 
@@ -48,7 +50,7 @@ namespace MARKETPLACE
 
 
 
-			bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
 						"~/Scripts/jquery-{version}.js"));
 
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
