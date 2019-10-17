@@ -72,5 +72,62 @@ namespace MARKETPLACE.Models
             cn.getcn.Close();
             return msg;
         }
+
+
+
+        /////////////////////////////////////////
+        public List<Marca> Listado_marca()
+        {
+            List<Marca> lista = new List<Marca>();
+            SqlCommand cmd = new SqlCommand("select * from marca", cn.getcn);
+            cn.getcn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Marca re = new Marca();
+                re.idmarca = dr.GetInt32(0);
+                re.desc_marca = dr.GetString(1);
+                lista.Add(re);
+            }
+            dr.Close();
+            cn.getcn.Close();
+            return lista;
+        }
+        public List<Categoria> Listado_categoria()
+        {
+            List<Categoria> lista = new List<Categoria>();
+            SqlCommand cmd = new SqlCommand("select * from categoria", cn.getcn);
+            cn.getcn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Categoria re = new Categoria();
+                re.idcategoria = dr.GetInt32(0);
+                re.desc_categoria = dr.GetString(1);
+                lista.Add(re);
+            }
+            dr.Close();
+            cn.getcn.Close();
+            return lista;
+        }
+
+
+        public string Registrar_producto(Producto pro)
+        {
+            string msg = "";
+            cn.getcn.Open();
+            SqlCommand cmd = new SqlCommand("USP_Registro_producto", cn.getcn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@cod", us.codigo);
+            cmd.Parameters.AddWithValue("@idmarca", pro.idmarca);
+            cmd.Parameters.AddWithValue("@idcategoria", pro.idcategoria);
+            cmd.Parameters.AddWithValue("@nomp", pro.nombre_producto);
+            cmd.Parameters.AddWithValue("@img", pro.img_producto);
+            cmd.Parameters.AddWithValue("@precio", pro.preciof_producto);
+            cmd.Parameters.AddWithValue("@descripcion", pro.desc_producto);
+            cmd.ExecuteNonQuery();
+            cn.getcn.Close();
+            return msg;
+        }
     }
 }

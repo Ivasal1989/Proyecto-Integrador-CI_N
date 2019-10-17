@@ -191,7 +191,10 @@
     <Compile Include="Datos\Users.cs">
       <DependentUpon>UserData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Categoria.cs" />
+    <Compile Include="Entity\Marca.cs" />
     <Compile Include="Entity\Pais.cs" />
+    <Compile Include="Entity\Producto.cs" />
     <Compile Include="Entity\UserDatos.cs" />
     <Compile Include="Entity\Uxsers.cs" />
     <Compile Include="Global.asax.cs">
@@ -305,6 +308,7 @@
     <Content Include="Views\User\UserS.cshtml" />
     <Content Include="Views\Ventas\Detalle_Producto.cshtml" />
     <Content Include="Views\Shared\_LayoutProducto.cshtml" />
+    <Content Include="Views\User\Registrar_Producto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

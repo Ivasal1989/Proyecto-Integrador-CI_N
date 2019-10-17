@@ -24,5 +24,22 @@ namespace MARKETPLACE.Models
         {
             return usersDAO.Listado_pais();
         }
+
+        /////////////////////////////////////
+        ///
+         ////////////////////////////////////
+        public string Registrar_producto(Producto pro)
+        {
+            return usersDAO.Registrar_producto(pro);
+        }
+
+        public List<Marca> Listado_marca()
+        {
+            return usersDAO.Listado_marca();
+        }
+        public List<Categoria> Listado_categoria()
+        {
+            return usersDAO.Listado_categoria();
+        }
     }
 }

@@ -174,6 +174,20 @@ no cycle
 no cache
 go
 --==========================================================
+-----------SECUENCIA PRODUCTO--------------
+
+If Object_id ('codPROD') is not null
+begin
+drop sequence codPROD
+end
+create sequence codPROD
+as smallint
+start with 1
+increment by 1
+no cycle
+no cache
+go
+--==========================================================
 --------------TABLA TIPOPERMISO------------------
 If Object_id ('tipo_permiso') is not null
 begin
@@ -282,12 +296,21 @@ insert into producto_televisor values (1,'Televisor Samsung Smart LED FULL HD 49
 
 --==========================================================
 --------------TABLA PRODUCTO------------------
-Create table producto
-(
-id_producto int not null primary key,
-desc_producto varchar(50),
 
+
+create table producto (
+id_producto varchar(20)not null primary key default 'PROD'+right('00'+cast(next value for codPROD as varchar),3),
+idmarca int not null,
+idcategoria int not null,
+nombre_producto varchar(50) not null,
+img_producto varbinary(max) NULL,
+preciof_producto decimal not null,
+desc_producto varchar(50) 
+FOREIGN KEY(idmarca) REFERENCES marca(idmarca),
+FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria)
 )
+
+
 --==================================================================================================
 --==========================================================
 --------------INSERT TIPOPERMISO------------------
@@ -392,3 +415,22 @@ end
 GO
 --==========================================================
 select * from Pais
+GO
+--==========================================================
+--------------PROC USP_Registro_producto------------------
+create Procedure USP_Registro_producto
+(
+ 
+ @idmarca int,
+ @idcategoria int,
+ @nomp varchar(50),
+ @img varbinary(max),
+ @precio decimal,
+ @descripcion varchar(50)
+)
+as
+begin
+ insert into producto( idmarca, idcategoria, nombre_producto, img_producto, preciof_producto, desc_producto) 
+ values (@idmarca,@idcategoria, @nomp, @img, @precio, @descripcion)
+end
+GO
