@@ -1,62 +1,63 @@
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
 }
-.contenedor{
-    width: 90%;
-    max-width: 1000px;
-    margin: 100px auto;/*ESPACIO SUPERIOR*/
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(4, auto);
 
-    /*grid-template-areas: "nom-prod .descripcion .carrito";*/
+.nombre-producto {
+    grid-area: nom-prod
 }
-.contenedor > div,
-.contenedor > .nombre-producto,
-.contenedor > .marca-categoria,
-.contenedor > .foto,
-.contenedor > .descripcion,
-.contenedor > .carrito,
-.contenedor > .detalle-producto{
-    border: 1px solid grey;
-    padding: 20px;
-    border-radius: 4px;
+
+.marca-categoria {
+    grid-area: marca-cat
 }
-.contenedor .nombre-producto{
-    border: 1px solid grey;
-    grid-column-start: 1;
-    grid-column-end: -3;
+
+.foto {
+    grid-area: foto
 }
-.contenedor .marca-categoria{
-    border: 1px solid grey;
-    grid-column-start: 1;
-    grid-column-end: -3;
+
+.descripcion {
+    grid-area: descripcion
 }
-.contenedor .foto{
-    width: 300px;
-    height: 400px;
-    border: 1px solid grey;
-    grid-column-start: 1;
-    grid-column-end: -3;
+
+.carrito {
+    grid-area: carrito
 }
-.contenedor .descripcion{
-    grid-column: 2/3;
-    grid-row: 4/3;
-    border: 1px solid grey;
-    display: flex;
+
+.detalle-producto {
+    grid-area: deta-prod
 }
-.contenedor .carrito{
-    grid-column: 3/4;
-    grid-row: 4/3;
-    border: 1px solid grey;
-    display: flex;
+
+.contenedor > div {
+    background: grey;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 8px;
 }
-.contenedor .detalle-producto{
-    border: 1px solid grey;
-    grid-column:span 3;
+
+.contenedor {
+    width: 95%;
+    max-width: 1300px;
+    margin: auto;
+    margin: 90px auto;
+    display: grid;
+    grid-template-areas: 'nom-prod nom-prod nom-prod' 'marca-cat marca-cat marca-cat' 'foto descripcion carrito' 'deta-prod deta-prod deta-prod';
+    grid-gap: 15px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 60px 60px 400px 60px;
 }
+
+    .contenedor .nombre-producto {
+        text-align: left;
+    }
+
+    .contenedor .marca-categoria {
+        text-align: left;
+    }
+
+    .contenedor .detalle-producto {
+        text-align: left;
+    }
+
  @media screen and (max-width: 600px){
     .contenedor .nombre-producto{
         grid-column: 1/-1;

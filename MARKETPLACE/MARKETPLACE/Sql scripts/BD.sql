@@ -128,10 +128,6 @@ FOREIGN KEY (idpais) REFERENCES pais(idpais),
 )
 GO
 --==========================================================
---------------INSERT USER------------------
-insert into Users (nombre,apellido,idpais,usuario,email,password)
-values('rodrigo','salazar',1,'rodri','rodrigo@hotmail.com','123456789');
---==========================================================
 --------------TABLA USUARIO------------------
 If Object_id ('usuario') is not null
 begin
@@ -312,10 +308,12 @@ go
 --------------INSERT PAIS------------------
 insert into pais 
 values
-('Peru'),
-('Venzuela'),
-('Colombia'),
-('Brasil')
+('Argentina'),('Ecuador'),('Bolivia'),('Venezuela'),('Uruguay'),('Paraguay'),('Chile'),
+('Brasil'),('Mexico'),('Costa rica'),('Panama'),('Nicaragua'),('Honduras'),('España'),('Peru')
+--==========================================================
+--------------INSERT USER------------------
+insert into Users (nombre,apellido,idpais,usuario,email,password)
+values('rodrigo','salazar',1,'rodri','rodrigo@hotmail.com','123456789');
 go
 --==========================================================
 --------------INSERT SEXO------------------
@@ -393,3 +391,4 @@ begin
 end
 GO
 --==========================================================
+select * from Pais

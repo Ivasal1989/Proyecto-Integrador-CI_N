@@ -1,4 +1,14 @@
-﻿.nav1989 {
+﻿@font-face {
+    font-family: Poppins-Regular;
+    src: url(../fonts/Poppins/Poppins-Regular.woff);
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url(../fonts/Poppins/Poppins-Light.woff);
+}
+.nav1989 {
+    font-family: Poppins-Light;
     max-width: 1200px;
     margin: auto;
     margin-top: -50px;
