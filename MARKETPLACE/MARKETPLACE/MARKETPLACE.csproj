@@ -200,15 +200,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910100805221_gender.cs" />
-    <Compile Include="Migrations\201910100805221_gender.Designer.cs">
-      <DependentUpon>201910100805221_gender.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910100807413_addfullname.cs" />
-    <Compile Include="Migrations\201910100807413_addfullname.Designer.cs">
-      <DependentUpon>201910100807413_addfullname.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\SessionData.cs" />
@@ -337,14 +328,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910100805221_gender.resx">
-      <DependentUpon>201910100805221_gender.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910100807413_addfullname.resx">
-      <DependentUpon>201910100807413_addfullname.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

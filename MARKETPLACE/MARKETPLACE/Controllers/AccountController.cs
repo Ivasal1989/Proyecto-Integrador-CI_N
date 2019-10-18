@@ -412,47 +412,47 @@ namespace MARKETPLACE.Controllers
 			}
 		}
 
-		//
-		// POST: /Account/ExternalLoginConfirmation
-		[HttpPost]
-		[AllowAnonymous]
-		[ValidateAntiForgeryToken]
-		public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
-		{
-			if (User.Identity.IsAuthenticated)
-			{
-				return RedirectToAction("Index", "Manage");
-			}
+        //
+        // POST: /Account/ExternalLoginConfirmation
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Manage");
+            }
 
-			if (ModelState.IsValid)
-			{
-				// Obtener datos del usuario del proveedor de inicio de sesión externo
-				var info = await AuthenticationManager.GetExternalLoginInfoAsync();
-				if (info == null)
-				{
-					return View("ExternalLoginFailure");
-				}
-				var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Fullname=model.FullName,Gender=model.Gender };
-				var result = await UserManager.CreateAsync(user);
-				if (result.Succeeded)
-				{
-					result = await UserManager.AddLoginAsync(user.Id, info.Login);
-					if (result.Succeeded)
-					{
-						await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-						return RedirectToLocal(returnUrl);
-					}
-				}
-				AddErrors(result);
-			}
+            if (ModelState.IsValid)
+            {
+                // Obtener datos del usuario del proveedor de inicio de sesión externo
+                var info = await AuthenticationManager.GetExternalLoginInfoAsync();
+                if (info == null)
+                {
+                    return View("ExternalLoginFailure");
+                }
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var result = await UserManager.CreateAsync(user);
+                if (result.Succeeded)
+                {
+                    result = await UserManager.AddLoginAsync(user.Id, info.Login);
+                    if (result.Succeeded)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        return RedirectToLocal(returnUrl);
+                    }
+                }
+                AddErrors(result);
+            }
 
-			ViewBag.ReturnUrl = returnUrl;
-			return View(model);
-		}
+            ViewBag.ReturnUrl = returnUrl;
+            return View(model);
+        }
 
-		//
-		// POST: /Account/LogOff
-		[HttpPost]
+        //
+        // POST: /Account/LogOff
+        [HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult LogOff()
 		{
