@@ -25,6 +25,9 @@ namespace MARKETPLACE.Datos
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<categoria> categoria { get; set; }
+        public virtual DbSet<marca> marca { get; set; }
+        public virtual DbSet<producto> producto { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

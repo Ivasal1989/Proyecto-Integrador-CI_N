@@ -171,25 +171,34 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\VentasController.cs" />
-    <Compile Include="Datos\UserData.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserData.Context.tt</DependentUpon>
+    <Compile Include="Datos\categoria.cs">
+      <DependentUpon>UsersData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos\UserData.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserData.tt</DependentUpon>
+    <Compile Include="Datos\marca.cs">
+      <DependentUpon>UsersData.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos\UserData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserData.edmx</DependentUpon>
+    <Compile Include="Datos\producto.cs">
+      <DependentUpon>UsersData.tt</DependentUpon>
     </Compile>
     <Compile Include="Datos\Users.cs">
-      <DependentUpon>UserData.tt</DependentUpon>
+      <DependentUpon>UsersData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\UsersData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\UsersData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\UsersData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entity\Categoria.cs" />
     <Compile Include="Entity\Marca.cs" />
@@ -227,15 +236,15 @@
     <Content Include="Content\registrar.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\Zocial.css" />
-    <Content Include="Datos\UserData.Context.tt">
+    <Content Include="Datos\UsersData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserData.edmx</DependentUpon>
-      <LastGenOutput>UserData.Context.cs</LastGenOutput>
+      <DependentUpon>UsersData.edmx</DependentUpon>
+      <LastGenOutput>UsersData.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Datos\UserData.tt">
+    <Content Include="Datos\UsersData.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserData.edmx</DependentUpon>
-      <LastGenOutput>UserData.cs</LastGenOutput>
+      <DependentUpon>UsersData.edmx</DependentUpon>
+      <LastGenOutput>UsersData.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -261,12 +270,12 @@
     <Content Include="fonts\Poppins\Poppins-Regular.otf" />
     <Content Include="fonts\Poppins\Poppins-Regular.ttf" />
     <Content Include="fonts\Poppins\Poppins-Regular.woff" />
-    <EntityDeploy Include="Datos\UserData.edmx">
+    <EntityDeploy Include="Datos\UsersData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserData.Designer.cs</LastGenOutput>
+      <LastGenOutput>UsersData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Datos\UserData.edmx.diagram">
-      <DependentUpon>UserData.edmx</DependentUpon>
+    <Content Include="Datos\UsersData.edmx.diagram">
+      <DependentUpon>UsersData.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -307,9 +316,10 @@
     <Content Include="Views\User\Listado_usuario.cshtml" />
     <Content Include="Views\User\Registrar_users.cshtml" />
     <Content Include="Views\User\UserS.cshtml" />
-    <Content Include="Views\Ventas\Detalle_Producto.cshtml" />
     <Content Include="Views\Shared\_LayoutProducto.cshtml" />
-    <Content Include="Views\User\Registrar_Producto.cshtml" />
+    <Content Include="Views\Producto\Registrar_Producto.cshtml" />
+    <Content Include="Views\Producto\Detalle_producto.cshtml" />
+    <Content Include="Views\Producto\Listado_producto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

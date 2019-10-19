@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\ivanj\Desktop\repositorio_GitHub\REPOSITORIO2\MARKETPLACE\MARKETPLACE\Datos\UserData.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\usrcdisn\Documents\PIT\REPOSITORIO-GITHUB\new4\MARKETPLACE\MARKETPLACE\Datos\UsersData.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.
