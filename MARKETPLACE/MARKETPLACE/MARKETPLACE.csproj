@@ -207,6 +207,7 @@
     <Compile Include="Models\UsersDAO.cs" />
     <Compile Include="Models\UsersDL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLServer\conexionDB.cs" />
     <Compile Include="SQLServer\Conexion.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

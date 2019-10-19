@@ -28,9 +28,9 @@ namespace MARKETPLACE.Models
         /////////////////////////////////////
         ///
          ////////////////////////////////////
-        public string Registrar_producto(Producto pro)
+        public string Registrar_producto(Producto producto)
         {
-            return usersDAO.Registrar_producto(pro);
+            return usersDAO.Registrar_producto(producto);
         }
 
         public List<Marca> Listado_marca()

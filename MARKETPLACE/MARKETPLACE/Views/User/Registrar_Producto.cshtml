@@ -3,12 +3,12 @@
 @{
     ViewBag.Title = "Create";
 }
-<head>
+@*<head>
     @Styles.Render("~/Content/CSS004")
-</head>
+</head>*@
 <h2>Create</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Registrar_Producto", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -22,9 +22,10 @@
             @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "nombre" } })
 
             <div>
-
-                <p class="t1">Seleccione imagen</p> <input required type="file" name="imageload" /><br />
+                @Html.LabelFor(model => model.img_producto, htmlAttributes: new { @class = "t1" })
+                <input type="file" name="img_producto" />
             </div>
+
             @Html.EditorFor(model => model.preciof_producto, new { htmlAttributes = new { @class = "t1", placeholder = "Precio" } })
 
             @Html.EditorFor(model => model.desc_producto, new { htmlAttributes = new { @class = "t1", placeholder = "descripcion", type = "text" } })

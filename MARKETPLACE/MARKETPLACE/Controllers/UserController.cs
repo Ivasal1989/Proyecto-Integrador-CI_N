@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 using MARKETPLACE.Models;
 using MARKETPLACE.Entity;
+using MARKETPLACE.SQLServer;
 ///////////////
 using System.IO;
 using System.Web.Helpers;
@@ -18,6 +19,7 @@ namespace MARKETPLACE.Controllers
     {
         SessionData session = new SessionData();
         UsersDL usersDL = new UsersDL();
+        private conexionDB db = new conexionDB();
 
         public ActionResult Listado_usuario()
         {
@@ -66,51 +68,40 @@ namespace MARKETPLACE.Controllers
         ////////////////////////////////////////////////////
 
 
-        public ActionResult ObtenerImagen(int id)
+        public ActionResult convertirImagen(string id_producto)
         {
+            var img_producto = db.Productos.Where(x => x.id_producto == id_producto).FirstOrDefault();
 
-            Producto pro = Producto.Find(id);
-            byte[] ImagenEnBytes = pro.img_producto;
-
-            MemoryStream ms = new MemoryStream(ImagenEnBytes);
-            Image image = Image.FromStream(ms);
-
-            ms = new MemoryStream();
-            image.Save(ms, ImageFormat.Jpeg);
-            ms.Position = 0;
-
-            return File(ms, "image/jpg");
-
+            return File(img_producto.img_producto, "image/jpeg");
         }
+
+
         public ActionResult Registrar_Producto()
         {
             ViewBag.idcategoria = new SelectList(usersDL.Listado_categoria(), "idcategoria", "desc_categoria");
             ViewBag.idmarca = new SelectList(usersDL.Listado_marca(), "idmarca", "desc_marca");
-            return View(new Producto());
+            return View();
         }
+
+
         [HttpPost]
-        public ActionResult Registrar_Producto(Producto prod)
+        [ValidateAntiForgeryToken]
+        public ActionResult Registrar_Producto([Bind(Include = "id_producto,idmarca,idcategoria,nombre_producto,preciof_producto,desc_producto")] Producto producto, HttpPostedFileBase img_producto)
         {
-            HttpPostedFileBase FileBase = Request.Files[0];
-
-            WebImage image = new WebImage(FileBase.InputStream);
-
-            prod.img_producto = image.GetBytes();
-
-            if (!ModelState.IsValid)
+            if (img_producto != null && img_producto.ContentLength > 0)
             {
-
-                ViewBag.idcategoria = new SelectList(usersDL.Listado_categoria(), "idcategoria", "desc_categoria", prod.idcategoria);
-                ViewBag.idmarca = new SelectList(usersDL.Listado_marca(), "idmarca", "desc_marca", prod.idmarca);
-                return View(prod);
+                byte[] imageData = null;
+                using (var binaryProducto = new BinaryReader(img_producto.InputStream))
+                {
+                    imageData = binaryProducto.ReadBytes(img_producto.ContentLength);
+                }
+                //setear la imagen a la entidad que se creara
+                producto.img_producto = imageData;
             }
-
-
-
-            ViewBag.mensaje = usersDL.Registrar_producto(prod);
-            return RedirectToAction("Index");
-            ////////////
-
+            ViewBag.idcategoria = new SelectList(usersDL.Listado_categoria(), "idcategoria", "desc_categoria", producto.idcategoria);
+            ViewBag.idmarca = new SelectList(usersDL.Listado_marca(), "idmarca", "desc_marca", producto.idmarca);
+            ViewBag.mensaje = usersDL.Registrar_producto(producto);
+            return RedirectToAction("Index", "Home");
         }
     }
     }

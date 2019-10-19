@@ -112,19 +112,19 @@ namespace MARKETPLACE.Models
         }
 
 
-        public string Registrar_producto(Producto pro)
+        public string Registrar_producto(Producto producto)
         {
             string msg = "";
             cn.getcn.Open();
             SqlCommand cmd = new SqlCommand("USP_Registro_producto", cn.getcn);
             cmd.CommandType = CommandType.StoredProcedure;
             //cmd.Parameters.AddWithValue("@cod", us.codigo);
-            cmd.Parameters.AddWithValue("@idmarca", pro.idmarca);
-            cmd.Parameters.AddWithValue("@idcategoria", pro.idcategoria);
-            cmd.Parameters.AddWithValue("@nomp", pro.nombre_producto);
-            cmd.Parameters.AddWithValue("@img", pro.img_producto);
-            cmd.Parameters.AddWithValue("@precio", pro.preciof_producto);
-            cmd.Parameters.AddWithValue("@descripcion", pro.desc_producto);
+            cmd.Parameters.AddWithValue("@idmarca", producto.idmarca);
+            cmd.Parameters.AddWithValue("@idcategoria", producto.idcategoria);
+            cmd.Parameters.AddWithValue("@nomp", producto.nombre_producto);
+            cmd.Parameters.AddWithValue("@img", producto.img_producto);
+            cmd.Parameters.AddWithValue("@precio", producto.preciof_producto);
+            cmd.Parameters.AddWithValue("@descripcion", producto.desc_producto);
             cmd.ExecuteNonQuery();
             cn.getcn.Close();
             return msg;
