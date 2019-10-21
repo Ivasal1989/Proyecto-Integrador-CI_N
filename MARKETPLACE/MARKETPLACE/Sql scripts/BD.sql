@@ -9,6 +9,28 @@ use RocketMarkets
 go
 set dateformat DMY
 GO
+CREATE SEQUENCE SEQ_MARCA
+AS SMALLINT
+START WITH 1
+INCREMENT BY 1
+NO CYCLE
+NO CACHE
+GO
+
+CREATE SEQUENCE SEQ_CATEG
+AS SMALLINT
+START WITH 1
+INCREMENT BY 1
+NO CYCLE
+NO CACHE
+GO
+CREATE SEQUENCE SEQ_PROD
+AS SMALLINT
+START WITH 1
+INCREMENT BY 1
+NO CYCLE
+NO CACHE
+GO
 --==========================================================
 --------------TABLA SEXO------------------
 If Object_id ('sexo') is not null
@@ -224,16 +246,15 @@ drop table marca
 end
 Create table  marca
 (
-idmarca int not null primary key,
+idmarca varchar(20) not null primary key default 'MR'+right('00'+cast(next value for SEQ_MARCA as varchar),3),
 desc_marca varchar(50)
 )
 go
-
-insert into marca values(1,'Samsung')
-insert into marca values(2,'LG')
-insert into marca values(3,'Huawei')
-insert into marca values(4,'Panasonic')
-insert into marca values(5,'Canon')
+insert into marca (desc_marca) values('Samsung')
+insert into marca (desc_marca) values('LG')
+insert into marca (desc_marca) values('Huawei')
+insert into marca (desc_marca) values('Panasonic')
+insert into marca (desc_marca) values('Canon')
 --==========================================================
 --------------TABLA CATEGORIA------------------
 If Object_id ('categoria') is not null
@@ -242,66 +263,67 @@ drop table categoria
 end
 Create table categoria
 (
-idcategoria int not null primary key,
+idcategoria varchar(20) not null primary key default 'CAT'+right('00'+cast(next value for SEQ_CATEG as varchar),3),
 desc_categoria varchar(50)
 )
 go
-
-insert into categoria values (1,'Smartphones')
-insert into categoria values (2,'Televisores')
-insert into categoria values (3,'Smartwatch')
-insert into categoria values (4,'Monitor')
+insert into categoria (desc_categoria) values ('Smartphones')
+insert into categoria (desc_categoria) values ('Televisores')
+insert into categoria (desc_categoria) values ('Smartwatch')
+insert into categoria (desc_categoria) values ('Monitor')
 --==========================================================
 --------------TABLA MARCA_CATEGORIA------------------
-If Object_id ('marca_categoria') is not null
-begin
-drop table marca_categoria
-end
-Create table marca_categoria
-(
-id_marca_categoria int not null primary key,
-id_marca int not null,
-id_categoria int not null
-FOREIGN KEY(id_marca) REFERENCES marca(idmarca),
-FOREIGN KEY(id_categoria) REFERENCES categoria(idcategoria)
-)
+--If Object_id ('marca_categoria') is not null
+--begin
+--drop table marca_categoria
+--end
+--Create table marca_categoria
+--(
+--id_marca_categoria int not null primary key,
+--idmarca varchar(20),
+--idcategoria varchar(20),
+--FOREIGN KEY(id_marca) REFERENCES marca(idmarca),
+--FOREIGN KEY(id_categoria) REFERENCES categoria(idcategoria)
+--)
 
-insert into marca_categoria values (1,1,1)
-insert into marca_categoria values (2,1,2)
-insert into marca_categoria values (3,1,3)
-insert into marca_categoria values (4,1,4)
-insert into marca_categoria values (5,2,1)
+--insert into marca_categoria values (1,1,1)
+--insert into marca_categoria values (2,1,2)
+--insert into marca_categoria values (3,1,3)
+--insert into marca_categoria values (4,1,4)
+--insert into marca_categoria values (5,2,1)
 
 --==========================================================
 --------------TABLA PRODUCTO_TELEVISOR------------------
-If Object_id ('producto_televisor') is not null
-begin
-drop table producto_televisor
-end
-create table producto_televisor
-(
-id_prod_televisor int not null primary key,
-nombre_prod varchar(70),
-modelo varchar(30),
-wifi varchar(5),
-resolucion varchar(15),
-HDMI int,
-USB int,
-bluetooth varchar(5),
-id_marcacategoria int not null
-FOREIGN KEY(id_marcacategoria) REFERENCES marca_categoria(id_marca_categoria)
-)
+--If Object_id ('producto_televisor') is not null
+--begin
+--drop table producto_televisor
+--end
+--create table producto_televisor
+--(
+--id_prod_televisor int not null primary key,
+--nombre_prod varchar(70),
+--modelo varchar(30),
+--wifi varchar(5),
+--resolucion varchar(15),
+--HDMI int,
+--USB int,
+--bluetooth varchar(5),
+--id_marcacategoria int not null
+--FOREIGN KEY(id_marcacategoria) REFERENCES marca_categoria(id_marca_categoria)
+--)
 
-insert into producto_televisor values (1,'Televisor Samsung Smart LED FULL HD 49'' TEST UHD MODELO 2019','TEST','Si','Full HD',3,2,'Si',2)
+--insert into producto_televisor values (1,'Televisor Samsung Smart LED FULL HD 49'' TEST UHD MODELO 2019','TEST','Si','Full HD',3,2,'Si',2)
 
 --==========================================================
 --------------TABLA PRODUCTO------------------
-
-
+If Object_id ('producto') is not null
+begin
+drop table producto
+end
 create table producto (
-id_producto varchar(20)not null primary key default 'PROD'+right('00'+cast(next value for codPROD as varchar),3),
-idmarca int not null,
-idcategoria int not null,
+id_producto varchar(20)not null primary key default 'PROD'+right('00'+cast(next value for SEQ_PROD as varchar),3),
+idmarca varchar(20),
+idcategoria varchar(20),
 nombre_producto varchar(50) not null,
 img_producto varbinary(max) NULL,
 preciof_producto decimal not null,
@@ -309,8 +331,7 @@ desc_producto varchar(50)
 FOREIGN KEY(idmarca) REFERENCES marca(idmarca),
 FOREIGN KEY(idcategoria) REFERENCES categoria(idcategoria)
 )
-
-
+go
 --==================================================================================================
 --==========================================================
 --------------INSERT TIPOPERMISO------------------
