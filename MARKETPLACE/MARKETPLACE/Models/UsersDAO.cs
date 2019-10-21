@@ -85,7 +85,7 @@ namespace MARKETPLACE.Models
             while (dr.Read())
             {
                 Marca re = new Marca();
-                re.idmarca = dr.GetInt32(0);
+                re.idmarca = dr.GetString(0);
                 re.desc_marca = dr.GetString(1);
                 lista.Add(re);
             }
@@ -102,7 +102,7 @@ namespace MARKETPLACE.Models
             while (dr.Read())
             {
                 Categoria re = new Categoria();
-                re.idcategoria = dr.GetInt32(0);
+                re.idcategoria = dr.GetString(0);
                 re.desc_categoria = dr.GetString(1);
                 lista.Add(re);
             }

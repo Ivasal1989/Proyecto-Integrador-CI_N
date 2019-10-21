@@ -11,10 +11,10 @@ namespace MARKETPLACE.Entity
         public string id_producto { get; set; }
 
         [Display(Name = "Marca del producto")]
-        public int idmarca { get; set; }
+        public string idmarca { get; set; }
 
         [Display(Name = "Categoria del producto")]
-        public int idcategoria { get; set; }
+        public string idcategoria { get; set; }
 
         [Display(Name = "Nombre del producto")]
         public string nombre_producto { get; set; }

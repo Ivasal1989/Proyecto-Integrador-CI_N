@@ -211,6 +211,8 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ProductoDAO.cs" />
+    <Compile Include="Models\ProductoDL.cs" />
     <Compile Include="Models\SessionData.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UsersDAO.cs" />
