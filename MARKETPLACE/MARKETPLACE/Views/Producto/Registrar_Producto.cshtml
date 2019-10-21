@@ -3,38 +3,127 @@
 @{
     ViewBag.Title = "Registrar_Producto";
 }
+<style type="text/css">
+    html {
+        background: #1E1E29;
+        background-size: cover;
+        min-height: 100%;
+    }
 
+    body {
+        background-color: transparent;
+    }
 
+    #tit {
+        text-align: center;
+        color: gray;
+        font-size: 35px;
+        font-style: italic;
+    }
+
+    #registration-form {
+        max-width: 800px;
+        margin: 20px auto;
+    }
+
+        #registration-form .image {
+            float: left;
+            background-image: url("../Imagenes/desk.jpg");
+            height: 500px;
+            width: 50%;
+            background-size: cover;
+            background-position: 25%;
+        }
+
+        #registration-form .frm {
+            float: right;
+            height: 500px;
+            width: 50%;
+            min-width: 250px;
+            padding: 0 35px;
+            background-size: 100% 100%;
+            background-color: white;
+        }
+
+        #registration-form h1 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        #registration-form .form-control {
+            width: 90%;
+            padding: 12px 20px;
+            height: auto;
+        }
+</style>
 <h2>Registrar</h2>
-
 @using (Html.BeginForm("Registrar_Producto", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <div class="row">
-        <h2>Registrar</h2>
-        <div class="col">
+    <div class="container" id="registration-form">
+        <div class="image"></div>
+        <div class="frm">
 
-            @Html.DropDownList("idmarca", (SelectList)ViewBag.idmarca, new { @class = "t1", placeholder = "Marca" })
+            <form>
+                <p id="tit">Registrar producto:</p>
+                <br />
+                @Html.DropDownList("idmarca", (SelectList)ViewBag.idmarca, new { @class = "form-control", placeholder = "Marca" })
+                <br />
+                @Html.DropDownList("idcategoria", (SelectList)ViewBag.idcategoria, new { @class = "form-control", placeholder = "Categoria" })
+                <br />
+                @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "form-control", Type = "text", placeholder = "nombre" } })
+                <br />
+                <div>
+                    @Html.LabelFor(model => model.img_producto, htmlAttributes: new { @class = "form-control" })
+                    <input type="file" name="img_producto" />
+                </div>
+                <br />
+                @Html.EditorFor(model => model.preciof_producto, new { htmlAttributes = new { @class = "form-control", placeholder = "Precio" } })
+                <br />
+                @Html.EditorFor(model => model.desc_producto, new { htmlAttributes = new { @class = "form-control", placeholder = "descripcion", type = "text" } })
+                <br /><br />
+                <input type="submit" value="Create" class="btn btn-success btn-lg" />
 
-            @Html.DropDownList("idcategoria", (SelectList)ViewBag.idcategoria, new { @class = "t1", placeholder = "Categoria" })
 
-            @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "nombre" } })
 
-            <div>
-                @Html.LabelFor(model => model.img_producto, htmlAttributes: new { @class = "t1" })
-                <input type="file" name="img_producto" />
-            </div>
 
-            @Html.EditorFor(model => model.preciof_producto, new { htmlAttributes = new { @class = "t1", placeholder = "Precio" } })
 
-            @Html.EditorFor(model => model.desc_producto, new { htmlAttributes = new { @class = "t1", placeholder = "descripcion", type = "text" } })
-
-            <input type="submit" value="Create" class="btnRegistrar" />
-
+            </form>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Listado_producto")
-</div>
+
+    @*<h2>Registrar</h2>
+
+        @using (Html.BeginForm("Registrar_Producto", "Producto", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <h2>Registrar</h2>
+                <div class="col">
+
+                    @Html.DropDownList("idmarca", (SelectList)ViewBag.idmarca, new { @class = "t1", placeholder = "Marca" })
+
+                    @Html.DropDownList("idcategoria", (SelectList)ViewBag.idcategoria, new { @class = "t1", placeholder = "Categoria" })
+
+                    @Html.EditorFor(model => model.nombre_producto, new { htmlAttributes = new { @class = "t1", Type = "text", placeholder = "nombre" } })
+
+                    <div>
+                        @Html.LabelFor(model => model.img_producto, htmlAttributes: new { @class = "t1" })
+                        <input type="file" name="img_producto" />
+                    </div>
+
+                    @Html.EditorFor(model => model.preciof_producto, new { htmlAttributes = new { @class = "t1", placeholder = "Precio" } })
+
+                    @Html.EditorFor(model => model.desc_producto, new { htmlAttributes = new { @class = "t1", placeholder = "descripcion", type = "text" } })
+
+                    <input type="submit" value="Create" class="btnRegistrar" />
+
+                </div>
+            </div>
+        }*@
+
+    <div>
+        @Html.ActionLink("Back to List", "Listado_producto")
+    </div>

@@ -257,6 +257,7 @@
     <Content Include="Imagenes\celulares.jpg" />
     <Content Include="Imagenes\celulares2.jpg" />
     <Content Include="Imagenes\compu.jpg" />
+    <Content Include="Imagenes\desk.jpg" />
     <Content Include="Imagenes\searchIcon.png" />
     <Content Include="Imagenes\searchIcon2.png" />
     <Content Include="Scripts\bootstrap.js" />
