@@ -13,8 +13,11 @@ namespace MARKETPLACE.Entity
         [Display(Name = "Marca del producto")]
         public string idmarca { get; set; }
 
+        public Marca marca { get; set; }
+
         [Display(Name = "Categoria del producto")]
         public string idcategoria { get; set; }
+        public Categoria categoria { get; set; }
 
         [Display(Name = "Nombre del producto")]
         public string nombre_producto { get; set; }
@@ -29,9 +32,6 @@ namespace MARKETPLACE.Entity
         [Display(Name = "Descripcion del producto")]
 
         public string desc_producto { get; set; }
-
-        public virtual Marca Marca { get; set; }
-        public virtual Categoria Categoria { get; set; }
 
         internal static Producto Find(int id)
         {

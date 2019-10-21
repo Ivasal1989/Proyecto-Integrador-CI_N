@@ -17,12 +17,12 @@
     </div>
     <div class="marca-categoria">
         <h3>
-            @Html.DisplayFor(model => model.idcategoria)
+            @Html.DisplayFor(model => model.idmarca)
         </h3>
         <hr class="separacion" />
     </div>
     <div class="foto">
-        <img width="350" height="380" style="border-radius:5px;" src="@Url.Action("ConvertirImagen_producto", "Producto", new {id_producto = Model.id_producto})" />
+        <img width="350" height="380" style="border-radius:10px;" src="@Url.Action("ConvertirImagen_producto", "Producto", new {id_producto = Model.id_producto})" />
     </div>
     <div class="descripcion">
         <h3>
