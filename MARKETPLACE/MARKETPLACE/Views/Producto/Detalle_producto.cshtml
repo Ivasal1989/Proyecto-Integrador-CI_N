@@ -1,29 +1,36 @@
-﻿
+﻿@model MARKETPLACE.Entity.Producto
+
 @{
-    ViewBag.Title = "Detalle_Producto";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Detalle_producto";
 }
 <head>
     <link href="~/Content/cliente-producto.css" rel="stylesheet" />
 </head>
 
+
 <div class="contenedor">
     <div class="nombre-producto">
-        Nombre del producto
+        <h2>
+            @Html.DisplayFor(model => model.nombre_producto)
+        </h2>
+        <hr class="separacion" />
     </div>
     <div class="marca-categoria">
-        Marca/Categoria
+        <h3>
+            @Html.DisplayFor(model => model.idcategoria)
+        </h3>
+        <hr class="separacion" />
     </div>
     <div class="foto">
-        FOTO
+        <img width="350" height="380" style="border-radius:5px;" src="@Url.Action("ConvertirImagen_producto", "Producto", new {id_producto = Model.id_producto})" />
     </div>
     <div class="descripcion">
-        <ul>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-            <li>Item</li>
-        </ul>
+        <h3>
+            Descripción
+        </h3>
+        <h4>
+            <span>*  @Html.DisplayFor(model => model.desc_producto)</span>
+        </h4>
     </div>
     <div class="carrito">
         carrito

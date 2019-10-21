@@ -30,6 +30,9 @@ namespace MARKETPLACE.Entity
 
         public string desc_producto { get; set; }
 
+        public virtual Marca Marca { get; set; }
+        public virtual Categoria Categoria { get; set; }
+
         internal static Producto Find(int id)
         {
             throw new NotImplementedException();

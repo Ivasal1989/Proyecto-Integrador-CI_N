@@ -7,9 +7,9 @@
 <h2>Listado_producto</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Registrar_producto")
 </p>
-<table class="table">
+<table style="width:1050px;margin:auto;" class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.idmarca)
@@ -19,6 +19,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.nombre_producto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.img_producto)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.preciof_producto)
@@ -41,15 +44,18 @@
             @Html.DisplayFor(modelItem => item.nombre_producto)
         </td>
         <td>
+            <img width="100" height="100" src="@Url.Action("ConvertirImagen_producto", "Producto", new {id_producto = item.id_producto})" />
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.preciof_producto)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.desc_producto)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_producto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_producto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_producto })
+        <td style="background-color:grey;">
+            @Html.ActionLink("Edit", "Edit", new { id = item.id_producto }) |
+            @Html.ActionLink("Details", "Detalle_producto", new { id = item.id_producto }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id_producto })
         </td>
     </tr>
 }

@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(../fonts/Poppins/Poppins-Regular.woff);
+}
+
+@font-face {
+    font-family: Poppins-Light;
+    src: url(../fonts/Poppins/Poppins-Light.woff);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -28,22 +38,22 @@
 }
 
 .contenedor > div {
-    background: grey;
-    text-align: center;
+    /*text-align: center;*/
     padding: 10px 0px;
-    border-radius: 8px;
+    margin-left: 25px;
 }
 
 .contenedor {
+    font-family: Poppins-Light;
     width: 95%;
     max-width: 1300px;
     margin: auto;
-    margin: 90px auto;
+    margin: 35px auto; /*margen de la parte superior*/
     display: grid;
     grid-template-areas: 'nom-prod nom-prod nom-prod' 'marca-cat marca-cat marca-cat' 'foto descripcion carrito' 'deta-prod deta-prod deta-prod';
     grid-gap: 15px;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 60px 60px 400px 60px;
+    grid-template-columns: 400px auto auto;
+    grid-template-rows: 60px 70px 380px 60px;
 }
 
     .contenedor .nombre-producto {
@@ -54,28 +64,47 @@
         text-align: left;
     }
 
+    .contenedor .foto {
+        text-align: center;
+        padding-top: 0px;
+    }
+
+    .contenedor .descripcion {
+        padding-left: 10px;
+    }
+
     .contenedor .detalle-producto {
         text-align: left;
     }
 
- @media screen and (max-width: 600px){
-    .contenedor .nombre-producto{
+@media screen and (max-width: 600px) {
+    .contenedor .nombre-producto {
         grid-column: 1/-1;
     }
-    .contenedor .marca-categoria{
+
+    .contenedor .marca-categoria {
         grid-column: 1/-1;
     }
-    .contenedor .foto{
+
+    .contenedor .foto {
         grid-column: 1/-1;
     }
-     .contenedor .descripcion{
-         grid-column: 1/-1;
-     }
-     .contenedor .carrito{
+
+    .contenedor .descripcion {
+        grid-column: 1/-1;
+    }
+
+    .contenedor .carrito {
         grid-column: 1/-1;
         grid-row: 6/5;
     }
-    .contenedor .detalle-producto{
+
+    .contenedor .detalle-producto {
         grid-column: 1/-1;
     }
- }
+}
+
+
+
+/*VISTA REGISTRO DE PRODUCTOS*/
+

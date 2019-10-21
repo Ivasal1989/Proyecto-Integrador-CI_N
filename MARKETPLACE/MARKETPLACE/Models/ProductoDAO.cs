@@ -19,7 +19,6 @@ namespace MARKETPLACE.Models
 		{
 			List<Producto> lista = new List<Producto>();
 			SqlCommand cmd = new SqlCommand("select * from producto", cn.getcn);
-			cmd.CommandType = CommandType.StoredProcedure;
 			cn.getcn.Open();
 			SqlDataReader dr = cmd.ExecuteReader();
 			while (dr.Read())
