@@ -15,6 +15,25 @@ namespace MARKETPLACE.Models
 	public class ProductoDAO
 	{
 		Conexion cn = new Conexion();
+
+		//public string Login()
+		//{
+		//	SqlCommand acceso = new SqlCommand("", cn.getcn);
+		//	if (acceso.Count() > 0)
+		//	{
+		//		var datos = acceso.ExecuteNonQuery();
+		//		foreach (var Data in datos)
+		//		{
+		//			Producto = Data.Producto;
+		//		}
+		//		return true;
+		//	}
+		//	else
+		//	{
+		//		return false;
+		//	}			
+		//}
+
 		public List<Producto> Listado_producto()
 		{
 			List<Producto> lista = new List<Producto>();
