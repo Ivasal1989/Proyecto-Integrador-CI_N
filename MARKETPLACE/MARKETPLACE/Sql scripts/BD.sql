@@ -442,8 +442,8 @@ GO
 create Procedure USP_Registro_producto
 (
  
- @idmarca int,
- @idcategoria int,
+ @idmarca varchar(20),
+ @idcategoria varchar(20),
  @nomp varchar(50),
  @img varbinary(max),
  @precio decimal,

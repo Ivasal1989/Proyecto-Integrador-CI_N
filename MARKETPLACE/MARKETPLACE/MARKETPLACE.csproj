@@ -323,7 +323,6 @@
     <Content Include="Views\Shared\_LayoutProducto.cshtml" />
     <Content Include="Views\Producto\Registrar_Producto.cshtml" />
     <Content Include="Views\Producto\Detalle_producto.cshtml" />
-    <Content Include="Views\Producto\Borrar_Listado_producto.cshtml" />
     <Content Include="Views\Producto\Listado_producto.cshtml" />
   </ItemGroup>
   <ItemGroup>
