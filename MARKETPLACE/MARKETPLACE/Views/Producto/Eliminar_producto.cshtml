@@ -1,0 +1,71 @@
+﻿@model MARKETPLACE.Entity.Producto
+
+@{
+    ViewBag.Title = "Eliminar_producto";
+}
+
+<h2>Eliminar_producto</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idmarca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idmarca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idcategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idcategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.img_producto)
+        </dt>
+        <dd>
+            <img width="50" height="50" src="@Url.Action("ConvertirImagen_producto", "Producto", new {id_producto = Model.id_producto})" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.preciof_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.preciof_producto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desc_producto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desc_producto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

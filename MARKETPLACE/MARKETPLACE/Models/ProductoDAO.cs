@@ -55,5 +55,17 @@ namespace MARKETPLACE.Models
 		{
 			return Listado_producto().Where(c => c.id_producto == id).FirstOrDefault();
 		}
-	}
+
+        public string Eliminar_producto(Producto pro)
+        {
+            string msg = "";
+            cn.getcn.Open();
+            SqlCommand cmd = new SqlCommand("DELETE_PRODUCTO", cn.getcn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@COD_PRO", pro.id_producto);
+            cmd.ExecuteNonQuery();
+            cn.getcn.Close();
+            return msg;
+        }
+    }
 }

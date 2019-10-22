@@ -76,5 +76,11 @@ namespace MARKETPLACE.Controllers
         }
         /////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////
+        public ActionResult Eliminar_producto(string id)
+        {
+            Producto pro = productoDL.Detalle_producto(id);
+            string mensaje = productoDL.Eliminar_producto(pro);
+            return RedirectToAction("Listado_producto");
+        }
     }
 }
