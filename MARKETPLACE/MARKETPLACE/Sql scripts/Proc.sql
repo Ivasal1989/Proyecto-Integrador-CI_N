@@ -1,3 +1,105 @@
+CREATE PROC USP_LIST_PROD
+AS
+BEGIN
+	SELECT P.id_producto,M.desc_marca,C.desc_categoria,P.nombre_producto,P.img_producto,P.preciof_producto,P.desc_producto
+	FROM producto P
+	INNER JOIN marca M
+	ON P.idmarca=M.idmarca
+	INNER JOIN categoria C
+	ON P.idcategoria=C.idcategoria
+END
+EXEC USP_LIST_PROD
+GO
+CREATE PROC DELETE_PRODUCTO
+(
+@COD_PRO VARCHAR(20)
+)
+AS
+BEGIN
+	DELETE producto	WHERE id_producto=@COD_PRO
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 --------------PROC USP_Registro_producto------------------
 CREATE PROC ADD_PRODUCTO
 (
@@ -55,14 +157,6 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------
-CREATE PROC DELETE_PRODUCTO
-(
-@COD_PRO VARCHAR(20)
-)
-AS
-BEGIN
-	DELETE producto	WHERE id_producto=@COD_PRO
-END
 GO
 
 exec DELETE_PRODUCTO 'PRD007'

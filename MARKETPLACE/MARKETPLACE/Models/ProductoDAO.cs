@@ -38,27 +38,16 @@ namespace MARKETPLACE.Models
 		{
 			List<Producto> lista = new List<Producto>();
 
-			SqlCommand cmd = new SqlCommand("select * from producto", cn.getcn);
+			SqlCommand cmd = new SqlCommand("USP_LIST_PROD", cn.getcn);
+			cmd.CommandType = CommandType.StoredProcedure;
 			cn.getcn.Open();
 			SqlDataReader dr = cmd.ExecuteReader();
 			while (dr.Read())
 			{
 				Producto pro = new Producto();
 				pro.id_producto = dr.GetString(0);
-				pro.idmarca = dr.GetString(1);
-				pro.idcategoria = dr.GetString(2);
-				//pro = new Producto();
-				//pro.id_producto = dr.GetString(0);
-				//pro.marca = new Marca()
-				//{
-				//	idmarca = Convert.ToString(dr["idmarca"]),
-				//	desc_marca = dr["desc_marca"].ToString()
-				//};
-				//pro.categoria = new Categoria()
-				//{
-				//	idcategoria = Convert.ToString(dr["idcategoria"]),
-				//	desc_categoria = dr["desc_categoria"].ToString()
-				//};
+				pro.desc_marca = dr.GetString(1);
+				pro.desc_categoria = dr.GetString(2);
 				pro.nombre_producto = dr.GetString(3);
 				pro.img_producto = (byte[])dr["img_producto"];
 				pro.preciof_producto = dr.GetDecimal(5);

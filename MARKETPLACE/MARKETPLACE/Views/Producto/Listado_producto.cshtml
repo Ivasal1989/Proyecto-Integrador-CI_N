@@ -12,22 +12,22 @@
 <table style="width:1050px;margin:auto;" class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.idmarca)
+            <label>Marca</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.idcategoria)
+            <label>Categoria</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.nombre_producto)
+            <label>Producto</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.img_producto)
+           <label>Imagen</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.preciof_producto)
+            <label>Precio</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.desc_producto)
+            <label>Descripción</label>
         </th>
         <th></th>
     </tr>
@@ -36,10 +36,10 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.idmarca)
+                @Html.DisplayFor(modelItem => item.desc_marca)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.idcategoria)
+                @Html.DisplayFor(modelItem => item.desc_categoria)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.nombre_producto)

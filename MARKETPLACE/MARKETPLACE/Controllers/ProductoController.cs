@@ -16,8 +16,8 @@ namespace MARKETPLACE.Controllers
 {
     public class ProductoController : Controller
     {
-
-        UsersDL usersDL = new UsersDL();
+		SessionData session = new SessionData();
+		UsersDL usersDL = new UsersDL();
 		ProductoDL productoDL = new ProductoDL();
 		private conexionDB db = new conexionDB();
         RocketMarketsEntities Entity = new RocketMarketsEntities();
@@ -33,7 +33,16 @@ namespace MARKETPLACE.Controllers
 		/////////////////////////////////////////////////////////////////////////////////////////
 		public ActionResult Listado_producto(Producto pro)
 		{
-			return View(productoDL.Listado_producto());
+			ViewBag.User = session.getSession("usuario");
+			if (ViewBag.User == "")
+			{
+				return RedirectToAction("Index", "Account");
+			}
+			else
+			{
+				return View(productoDL.Listado_producto());
+			}
+			
 		}
         /////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////

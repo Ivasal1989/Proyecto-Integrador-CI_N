@@ -12,14 +12,11 @@ namespace MARKETPLACE.Entity
 
         [Display(Name = "Marca del producto")]
         public string idmarca { get; set; }
-
-        public Marca marca { get; set; }
-
-        [Display(Name = "Categoria del producto")]
+		public string desc_marca { get; set; }
+		[Display(Name = "Categoria del producto")]
         public string idcategoria { get; set; }
-        public Categoria categoria { get; set; }
-
-        [Display(Name = "Nombre del producto")]
+		public string desc_categoria { get; set; }
+		[Display(Name = "Nombre del producto")]
         public string nombre_producto { get; set; }
 
         [Display(Name = "Imagen de producto"), DataType(DataType.Upload)]
