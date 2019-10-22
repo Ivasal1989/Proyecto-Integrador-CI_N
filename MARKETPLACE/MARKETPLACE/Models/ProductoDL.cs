@@ -21,5 +21,9 @@ namespace MARKETPLACE.Models
 		{
 			return productoDAO.Detalle_producto(id);
 		}
-	}
+        public string Eliminar_producto(Producto pro)
+        {
+            return productoDAO.Eliminar_producto(pro);
+        }
+    }
 }

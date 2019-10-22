@@ -324,6 +324,7 @@
     <Content Include="Views\Producto\Registrar_Producto.cshtml" />
     <Content Include="Views\Producto\Detalle_producto.cshtml" />
     <Content Include="Views\Producto\Listado_producto.cshtml" />
+    <Content Include="Views\Producto\Eliminar_producto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

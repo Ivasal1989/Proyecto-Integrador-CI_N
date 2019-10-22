@@ -455,3 +455,13 @@ begin
  values (@idmarca,@idcategoria, @nomp, @img, @precio, @descripcion)
 end
 GO
+
+CREATE PROC DELETE_PRODUCTO
+(
+@COD_PRO VARCHAR(20)
+)
+AS
+BEGIN
+	DELETE producto	WHERE id_producto=@COD_PRO
+END
+GO
