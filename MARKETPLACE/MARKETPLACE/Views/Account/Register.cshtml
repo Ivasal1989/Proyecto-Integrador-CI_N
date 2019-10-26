@@ -1,0 +1,29 @@
+﻿@model MARKETPLACE.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Registrarse";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+<head>
+    @Styles.Render("~/Content/CSS004")
+</head>
+<aside class="aside">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="row">
+            <h2>Registrar</h2>
+            <div class="col">
+                @Html.TextBoxFor(m => m.Email, new { @class = "t1", placeholder = "Email" })
+
+                @Html.PasswordFor(m => m.Password, new { @class = "t1", placeholder = "Contraseña", type = "password" })
+
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "t1", placeholder = "Contraseña", type = "password" })
+            </div>
+        </div>
+        <input type="submit" value="Create" class="btnRegistrar" />
+    }
+</aside>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
