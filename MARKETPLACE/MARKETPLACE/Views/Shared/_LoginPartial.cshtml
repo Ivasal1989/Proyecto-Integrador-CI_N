@@ -3,7 +3,6 @@
     <link href="~/Content/Bootstrap3.0/bootstrap.min.css" />
     <link href="~/Content/header.css" />
 </head>
-
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -23,13 +22,10 @@
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Iniciar sesión", "Index", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        <li>@Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
-    @*<ul class="nav navbar-nav navbar-right">
-            <li>@Html.ActionLink("lolo", "lolo", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-        </ul>*@
 }
-
 @section scripts{
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

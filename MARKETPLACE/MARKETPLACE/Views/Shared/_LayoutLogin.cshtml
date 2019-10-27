@@ -12,22 +12,22 @@
                 <a class="dashboard" href=""><span class="icon-user">@Html.ActionLink("Ir a inicio", "Listado_producto", "Producto")</span></a>
             </li>
             <li>
-                <a class="dashboard" href=""><span class="icon-circle-left">@Html.ActionLink("Login", "Index", "Account")</span></a>
+                <a class="dashboard" href=""><span class="icon-circle-left">@Html.ActionLink("Login", "Login", "Account")</span></a>
             </li>
             <li>
-                <a href=""><span class="icon-display">@Html.ActionLink("Registrarse", "Registrar_users", "User")</span></a>
+                <a href=""><span class="icon-display">@Html.ActionLink("Registrarse", "Register", "Account")</span></a>
             </li>
             @*<li>
-                <a href=""><span class="icon-user">@Html.ActionLink("Afiliado", "Registrar_afiliado", "Afiliado")</span></a>
-            </li>*@
+                    <a href=""><span class="icon-user">@Html.ActionLink("Afiliado", "Registrar_afiliado", "Afiliado")</span></a>
+                </li>*@
         </ul>
     </header>
-
     @RenderBody()
     <footer class="footer">
         <a>equipo los tigres.com</a>
-
     </footer>
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -5,14 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
-    @*@Styles.Render("~/Content/css")*@
     @Styles.Render("~/Content/css000")
     @Styles.Render("~/Content/css006")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/Bootstrap3.0/bootstrap.min.css" />
 </head>
 <body>
-
     <nav class="navbar navbar-default nav1989" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -23,13 +21,11 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Marketplace</a>
-            @*<a class="navbar-brand" href="#">@Html.ActionLink("MarketPlace", "Index", "Home")</a>*@
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li class="">@Html.ActionLink("Registrar", "Registrar_producto", "Producto")</li>
+                <li class="">@Html.ActionLink("Registrar", "Registrar_Producto", "Producto")</li>
                 <li><a href="#">Destacados</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
@@ -47,57 +43,33 @@
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
             @Html.Partial("_LoginPartial")
-
         </div>
     </nav>
-
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("marketplace", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div>
-                @*<ul>
-                        <li style="float:right;list-style:none;color:white;">@Html.ActionLink("Iniciar", "Index", "Home")</li>
-                    </ul>
-    @Html.Partial("_LoginPartial")
-    </div>
-    </div>
-    </div>*@
-
-
-
     <div>
         @RenderBody()
         <hr />
         @*<footer>
-            <div class="row">
-                <div class="col-md-12 copyright">
-                    <div class="col-md-6 col-sm-6 copyright-left">
-                        <p>&copy;@DateTime.Now.Year - Online Shopping Market Place. Todos los derechos reservados</p>
+                <div class="row">
+                    <div class="col-md-12 copyright">
+                        <div class="col-md-6 col-sm-6 copyright-left">
+                            <p>&copy;@DateTime.Now.Year - Online Shopping Market Place. Todos los derechos reservados</p>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 copyright-right">
+
+                            <ul class="list-unstyled list-social">
+                                <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+
+                            </ul>
+                        </div>
+
                     </div>
-
-                    <div class="col-md-6 col-sm-6 copyright-right">
-
-                        <ul class="list-unstyled list-social">
-                            <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-
-                        </ul>
-                    </div>
-
                 </div>
-            </div>
 
-        </footer>*@
+            </footer>*@
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
