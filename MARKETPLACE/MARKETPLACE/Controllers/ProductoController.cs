@@ -16,7 +16,7 @@ namespace MARKETPLACE.Controllers
 {
     public class ProductoController : Controller
     {
-	
+		SessionData session = new SessionData();
 		UsersDL usersDL = new UsersDL();
 		ProductoDL productoDL = new ProductoDL();
 		private conexionDB db = new conexionDB();
@@ -31,13 +31,22 @@ namespace MARKETPLACE.Controllers
 		}
 		/////////////////////////////////////////////////////////////////////////////////////////
 		/////////////////////////////////////////////////////////////////////////////////////////
-		public ActionResult Listado_producto()
+		public ActionResult Listado_producto(Producto pro)
 		{
-			return View(productoDL.Listado_producto());
+			ViewBag.User = session.getSession("usuario");
+			if (ViewBag.User == "")
+			{
+				return RedirectToAction("Index", "Account");
+			}
+			else
+			{
+				return View(productoDL.Listado_producto());
+			}
+			
 		}
-		/////////////////////////////////////////////////////////////////////////////////////////
-		/////////////////////////////////////////////////////////////////////////////////////////
-		public ActionResult Detalle_producto(string id)
+        /////////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////////////////////
+        public ActionResult Detalle_producto(string id)
         {
             return View(productoDL.Detalle_producto(id));
         }

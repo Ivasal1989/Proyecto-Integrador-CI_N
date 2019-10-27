@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("head", required: false)
+    @*@Styles.Render("~/Content/css")*@
+    @Styles.Render("~/Content/css006")
+    @Styles.Render("~/Content/css000")
+    <link href="~/Content/Bootstrap3.0/bootstrap.min.css" />
+</head>
+<body>
+    @{
+        if (!string.IsNullOrEmpty(ViewBag.User))
+        {
+            <nav class="navbar navbar-default nav1989" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">RocketMarke</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a href="#">Registrar</a></li>
+                        <li><a href="#">Destacados</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Productos <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li style="background-color: grey;"><a href="#">Action</a></li>
+                                <li style="background-color: grey;"><a href="#">Another action</a></li>
+                                <li style="background-color: grey;"><a href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input style="width: 400px;" type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li style="color:white;margin-top:15px;">
+                            @ViewBag.User
+                        </li>
+                        <li style="color:white;">
+                            @Html.ActionLink("Salir", "Close", "User")
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+            @*<div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            @Html.ActionLink("marketplace", "User", "User", new { area = "" }, new { @class = "navbar-brand" })
+                        </div>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li  style="color:white;margin-top:15px;">
+                                @ViewBag.User
+                            </li>
+                            <li style="color:white;">
+                                @Html.ActionLink("Salir", "Close", "User")
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>*@
+        }
+    }
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <center>
+            <p></p>
+        </center>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
+
