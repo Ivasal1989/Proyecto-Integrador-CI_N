@@ -8,7 +8,7 @@ namespace MARKETPLACE.Entity
     public class Producto
     {
         [Key, Required(ErrorMessage = "Campo Requerido"), Display(Name = "Codigo de producto")]
-        public string id_producto { get; set; }
+        public int id_producto { get; set; }
 
         [Display(Name = "Marca del producto")]
         public string idmarca { get; set; }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MARKETPLACE.Models;
+using MARKETPLACE.Models.Home;
 
 namespace MARKETPLACE.Controllers
 {
@@ -11,9 +12,10 @@ namespace MARKETPLACE.Controllers
 	{
 		public ActionResult Index()
 		{
-			ViewBag.Message = "Your application description page.";
 
-			return View();
+
+            HomeIndexViewModel model = new HomeIndexViewModel();
+            return View(model.CreateModel());
 		}
 		public ActionResult About()
 		{

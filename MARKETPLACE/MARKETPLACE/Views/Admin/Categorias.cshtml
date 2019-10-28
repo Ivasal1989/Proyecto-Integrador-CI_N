@@ -1,0 +1,60 @@
+﻿@model List<MARKETPLACE.DAL.categoria>
+    @{
+        ViewBag.Title = "Categorias";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Categorias</li>
+    </ol>
+    <!-- DataTables Example -->
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+             Detalles de Categorias
+            <a href="../Admin/AddCategoria" class="btn btn-info pull-right fa fa-plus">Agregar Nueva Categoria</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Sr. No</th>
+                            <th>Nombre Categoria</th>
+                            <th>Accion</th>
+                            
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Sr. No</th>
+                            <th>Nombre Categoria</th>
+                            <th>Accion</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(Model.IndexOf(item)+1)</td>
+                                <td>@item.desc_categoria</td>
+                                <td>
+                                    @Html.ActionLink("Editar", "CategoriaEdit", new { catId = item.idcategoria })
+                                </td>
+
+                            </tr>
+                        }
+                       
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

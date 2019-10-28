@@ -7,7 +7,7 @@ namespace MARKETPLACE.Entity
 {
     public class Categoria
     {
-        public string idcategoria { get; set; }
+        public int idcategoria { get; set; }
         public string desc_categoria { get; set; }
     }
 }

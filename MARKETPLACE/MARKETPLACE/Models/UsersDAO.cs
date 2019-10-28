@@ -102,7 +102,7 @@ namespace MARKETPLACE.Models
             while (dr.Read())
             {
                 Categoria re = new Categoria();
-                re.idcategoria = dr.GetString(0);
+                re.idcategoria = dr.GetInt32(0);
                 re.desc_categoria = dr.GetString(1);
                 lista.Add(re);
             }

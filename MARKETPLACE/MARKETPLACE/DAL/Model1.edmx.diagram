@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="096368f8c83e4555b2e4b72171dd50e2" Name="Diagram1">
+        <EntityTypeShape EntityType="RocketMarkets2Model.afiliado" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.categoria" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.distrito" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.pais" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.permisos" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.producto" Width="1.5" PointX="11" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.provincia" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.sexo" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.tipo_empresa" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.tipo_permiso" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.Users" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="RocketMarkets2Model.usuario" Width="1.5" PointX="6" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__afiliado__iddist__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__afiliado__idpais__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__afiliado__idprov__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__afiliado__idtipo__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__producto__idcate__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__Users__idpais__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__usuario__idpais__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__permisos__cod_ti__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="RocketMarkets2Model.FK__usuario__idsexo__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
