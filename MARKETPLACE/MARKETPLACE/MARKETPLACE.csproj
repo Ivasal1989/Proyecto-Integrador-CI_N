@@ -367,6 +367,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Sql scripts\BD_Camones.sql" />
     <Content Include="Sql scripts\BD.sql" />
     <Content Include="Sql scripts\Proc.sql" />
     <Content Include="Web.config" />
