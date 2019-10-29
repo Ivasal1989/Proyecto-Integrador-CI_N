@@ -9,7 +9,7 @@ namespace MARKETPLACE.SQLServer
 {
     public class Conexion
     {
-        SqlConnection cn = new SqlConnection("server=ivasal; database=RocketMarkets2;uid=katetodd");
+        SqlConnection cn = new SqlConnection("server=ivasal; database=RocketMarkets; uid=sa; pwd=katetodd");
 
         public SqlConnection getcn
         {

@@ -16,11 +16,8 @@ namespace MARKETPLACE
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",
-				//defaults: new { controller = "Producto", action = "Listado_producto", id = UrlParameter.Optional }
-
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-
-            );
+				defaults: new { controller = "Producto", action = "Listado_producto", id = UrlParameter.Optional }
+			);
 		}
 	}
 }
